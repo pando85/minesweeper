@@ -1,0 +1,27 @@
+[package]
+name = "minesweeper_core"
+authors = ["Pando85 <pando855@gmail.com>"]
+version = "0.1.0"
+edition = "2021"
+license-file = "../LICENSE"
+homepage = "https://github.com/pando85/minesweeper"
+repository = "https://github.com/pando85/minesweeper"
+readme = "../README.md"
+
+[lib]
+name = "minesweeper_core"
+path = "src/lib.rs"
+
+[[bin]]
+name = "minesweeper"
+path = "src/bin/minesweeper.rs"
+
+[dependencies]
+rand = { version = "0.8.5", features = ["small_rng"]}
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "main"
+harness = false
