@@ -64,7 +64,8 @@ pub fn get_grid(
     let mut rng = SmallRng::from_entropy();
     let mut cols = (0..width).collect();
 
-    let max_threads = num_cpus::get();
+    // 20 is a empiric number getting for testing performance
+    let max_threads = num_cpus::get() * 20;
 
     let cols_per_thread = div_ceil(width, max_threads);
 

@@ -9,6 +9,7 @@
 
 ![Build status](https://img.shields.io/github/workflow/status/pando85/minesweeper/Rust/master)
 ![Timer license](https://img.shields.io/github/license/pando85/timer)
+
 Random minesweeper one node generator blazing fast.
 
 ## Benchmarking
