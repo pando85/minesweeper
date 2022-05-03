@@ -20,3 +20,7 @@ cargo flamegraph --bin minesweeper
 # benchmarking
 cargo flamegraph --bench main -- --bench
 ```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pando85/minesweeper/master/assets/flamegraph_bin.svg" alt="logo" width="800">
+</p>
