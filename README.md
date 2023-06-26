@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-![Build status](https://img.shields.io/github/workflow/status/pando85/minesweeper/Rust/master)
+![Build status](https://img.shields.io/github/actions/workflow/status/pando85/minesweeper/rust.yml?branch=master)
 ![Timer license](https://img.shields.io/github/license/pando85/timer)
 
 Random minesweeper one node generator blazing fast.
