@@ -136,8 +136,7 @@ pub fn get_grid(
     } else {
         let mut grid = vec![vec![false; height]; width];
         let mut indexes: Vec<(usize, usize)> = (0..width)
-            .into_iter()
-            .flat_map(|x| (0..height).into_iter().map(move |y| (x, y)))
+            .flat_map(|x| (0..height).map(move |y| (x, y)))
             .collect();
 
         for _ in 0..mines_n {
@@ -157,8 +156,8 @@ mod tests {
         let mut rng = SmallRng::from_entropy();
         let mut v = vec![1, 2, 3];
         let value = pick_random(&mut rng, &mut v).unwrap();
-        assert_eq!(value >= 1, true);
-        assert_eq!(value <= 3, true);
+        assert!(value >= 1);
+        assert!(value <= 3);
         assert_eq!(v.len(), 2);
     }
 
@@ -172,7 +171,7 @@ mod tests {
             if let Ok(mines_vec) = mines_vec_result {
                 let mines_n = mines_vec
                     .into_iter()
-                    .fold(0, |acc, x| if x == true { acc + 1 } else { acc });
+                    .fold(0, |acc, x| if x { acc + 1 } else { acc });
                 assert_eq!(mines_n, input_mines)
             } else {
                 assert_eq!(mines_vec_result, Err(MinesOverflowError))
@@ -194,7 +193,7 @@ mod tests {
                     mines_grid
                         .into_iter()
                         .flatten()
-                        .fold(0, |acc, x| if x == true { acc + 1 } else { acc });
+                        .fold(0, |acc, x| if x { acc + 1 } else { acc });
                 assert_eq!(mines_n, input_mines)
             } else {
                 assert_eq!(mines_grid_res, Err(MinesOverflowError))
@@ -219,7 +218,7 @@ mod tests {
                     mines_grid
                         .into_iter()
                         .flatten()
-                        .fold(0, |acc, x| if x == true { acc + 1 } else { acc });
+                        .fold(0, |acc, x| if x { acc + 1 } else { acc });
                 assert_eq!(mines_n, input_mines)
             } else {
                 assert_eq!(mines_grid_res, Err(MinesOverflowError))
